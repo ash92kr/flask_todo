@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block bb %}
+
+<!--사용자가 입력할 폼 생성-->
+
+<form action="/todos/create" method="post">  <!--어떤 url로 입력 정보를 보낼 것인가?-->
+  <div class="form-group">                   <!--get방식은 사용자의 정보를 ? 뒤에 보내고 post 방식은 안에 감춤-->
+    <label for="todo">To Do</label>
+    <input name="todo" type="text" class="form-control" id="todo" aria-describedby="emailHelp" placeholder="할 일을 적어주세요!">
+  </div>
+  <div class="form-group">
+    <label for="deadline">Deadline</label>
+    <input name="deadline" type="date" class="form-control" id="deadline">
+  </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock %}
